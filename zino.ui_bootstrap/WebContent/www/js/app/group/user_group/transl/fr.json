@@ -1,0 +1,20 @@
+{
+	"prj_user_group_btn_delete_group"		     		: "Supprimer le groupe",
+    
+	"prj_user_group_name"								: "Nom du groupe",
+    "prj_user_group_descr"								: "Description",
+	"prj_user_group_ref"								: "Code du groupe",
+	"prj_user_group_date_begin"							: "Date de création",
+
+    "prj_user_group_name_enter"							: "Saisir le nom du groupe",
+	"prj_user_group_descr_enter"						: "Saisir la description du groupe",
+
+	"prj_user_group_new"								: "Nouveau groupe",
+	"prj_user_chat_search"								: "Recherche l'utilisateur, groupe ...",
+
+	"prj_user_group_new_title"							: "Créer le nouveau groupe",
+	"prj_user_group_new_msg"							: "Créez des groupes de discussion, aidez-vous à travailler plus efficacement!",
+
+	"prj_user_group_avatar"								: "Avatar",
+	"prj_user_group_new_btn_create"						: "Créer le groupe"
+}

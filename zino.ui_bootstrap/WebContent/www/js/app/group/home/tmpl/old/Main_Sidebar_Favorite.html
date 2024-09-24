@@ -1,0 +1,18 @@
+{{#if lstFav}}
+<a href="javascript: void(0);" class="has-arrow waves-effect">
+    <i class="bx bx bx-heart"></i>
+    <span>{{transl 'prj_project_sidebar_favorite'}}</span>
+</a>
+<ul class="sub-menu" aria-expanded="false">
+	{{#each lstFav as |parVal parKey|}}
+    {{#each parVal.lst}}
+        <li class="prj_menu_li">
+            <a data-url="{{reqSrcPage parKey typ00 typ01 typ02 id code01}}" data-route="{{reqRoutePage parKey typ00 typ01 typ02}}" class="menu-item-prj cursor-pointer prj_menu_a hnv-route">
+                <i class="fa fa-circle mr-2 {{reqClassFav parKey typ00 typ01 typ02}}" style="font-size: .7rem; min-width: auto"/>{{name}}
+            </a>
+            <i data-id="{{id}}" data-type="{{parKey}}" class="fa fa-trash prj-trash-menu"></i>
+        </li>
+    {{/each}}
+    {{/each}}
+</ul>
+{{/if}}

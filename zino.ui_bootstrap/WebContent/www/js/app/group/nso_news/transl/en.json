@@ -1,0 +1,94 @@
+{
+    "---DEAL CLUB DASHBOARD--------------------"		: "----------------------------------------",
+	"dashboard_create_offer_form_info"				: "Create a new offer",
+	"dashboard_create_offer_form_title"				: "Post name",
+	"dashboard_create_offer_form_typ"				: "Offer type",
+	"dashboard_create_offer_form_file"				: "Attachments",
+	"dashboard_create_offer_cont01"					: "Summary of post",
+	"dashboard_create_offer_cont02"					: "Details content",
+	"dashboard_create_offer_cont03"					: "Other content",
+	"dashboard_create_offer_dtBegin"				: "Deployment date",
+	"dashboard_create_offer_dtEnd"					: "End date",
+	"dashboard_create_offer_addr"					: "Adresse ou chemin du site Web",
+	"dashboard_create_offer_addr_enter"				: "Enter a website address or path that the user can access, for example: http://example.com",
+	"dashboard_create_offer_save"					: "Save",
+	"dashboard_create_offer_save_success"			: "The post is successfully saved, we will moderate it before posting",
+	"dashboard_create_offer_lang"					: "Select display language",
+	"dashboard_create_offer_lang_vn"				: "Vietnamese",
+	"dashboard_create_offer_lang_en"				: "English",
+	"dashboard_create_offer_lang_fr"				: "French",
+	
+	"dashboard_deal_homepage"						: "Home page",
+	"dashboard_deal_descr"							: "Featured promotions",
+	"dashboard_deal_profile"						: "My information",
+	"dashboard_deal_createOffer"					: "Create a new offer",
+	"dashboard_deal_lstOffer"						: "Offers created",
+	"dashboard_deal_log_out"						: "Log out",
+	
+	"dashboard_deal_depense"						: "Offer preferences",
+	"dashboard_deal_code_promo"						: "Discount code",
+	"dashboard_deal_for_free"						: "Free item",
+	"dashboard_deal_admin"							: "Adminitration",
+	"dashboard_deal_abous_us"						: "About us",
+	"dashboard_deal_category"						: "Incentive group",
+	"dashboard_deal_abous_us_title"					: "Who are we",
+	"dashboard_deal_abous_us_content"				: "",
+	
+	"dashboard_deal_policy"                         : "General Terms",
+	"dashboard_deal_policy_content_01"              : "",
+	"dashboard_deal_policy_content_02"              : "",
+	
+	"deal_detail_user"								: "Creator",
+	"deal_detail_dtbegin"							: "Start date",
+	"deal_detail_dtend"								: "End date",
+	"deal_detail_image"								: "Images",
+	"deal_detail_lang"								: "Langue",
+	"deal_detail_lang_vn"							: "Vietnamese",
+	"deal_detail_lang_en"							: "English",
+	"deal_detail_lang_fr"							: "French",
+	
+	"nso_ent_type_001"								: "Shopping incentives",
+	"nso_ent_type_002"								: "Coupon code",
+	"nso_ent_type_003"								: "Free",
+	
+	"nso_ent_header_type_10000"						: "Offer",
+	
+	"deal_list_offer_title"							: "Offers",
+	"deal_list_offer_descr"							: "New and most attractive offers",
+	"deal_list_btn_detail"							: "Detail",
+	"deal_list_btn_del"								: "Delete",
+	"deal_list_btn_edit"							: "Edit",
+	"deal_list_date_end"							: "Expired : ",
+	"deal_list_name_visitor"						: "Guest post",
+	
+	
+	"deal_list_category_title"						: "Incentive group",
+	
+	"deal_home_offer_cat"							: "Choose offer",
+	"deal_home_offer_cat_all"						: "Show all",
+	"deal_home_offer_my_list"						: "List of offer created",
+	"deal_ent_offer_msg_no_get"						: "This offer is not approved or available yet, please come back later.",
+	
+	"deal_ent_offer_comment_title"					: "Comment",
+	"deal_ent_offer_comment_enter"					: "Write a comment.",
+	"deal_ent_offer_comment_send"					: "Send",
+	"deal_ent_offer_comment_no_cmt"					: "No comments yet, please rate this post.",
+	"deal_ent_offer_comment_reply"					: "Reply",
+	"deal_ent_offer_comment_no_login"				: "Please <a class='cursor-pointer text-info' id='btn_login'>login</a> to comment",
+	
+	"deal_ent_offer_expired_late"					: "it's over  ",
+	"deal_ent_offer_expired_in"						: "still ",
+	"deal_ent_offer_expired_day"					: " days",
+	
+	"deal_ent_offer_edit_title"						: "Edit your offer",
+	"deal_ent_offer_edit_calcel"					: "Cancel",
+	"deal_ent_offer_claim_message"					: "Submit a complaint",
+	
+	"deal_footer_store_open"						: "Opening hours: 24/7",
+	"deal_footer_receive_notify"					: "Get notifications",
+	"deal_footer_sign_in_for_notify"				: "Subscribe with us to stay up to date with the latest information",
+	"deal_footer_your_email"						: "Your email",
+	
+	"deal_ent_offer_new_no_login"					: "Do you want to login before saving this offer ?",
+	"deal_ent_offer_msg_degre_offer"				: "Thank you for suggesting this offer"
+}

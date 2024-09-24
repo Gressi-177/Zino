@@ -1,0 +1,13 @@
+{{#* inline "getChild"}}
+	<li class="breadcrumb-item {{#if isShow}}active{{/if}}"><a href="view_prj_file_content.html?id={{id}}&code={{code01}}">{{cutStrNumber name 20}}</a></li>
+	{{#if child}}
+	{{> getChild child}}
+	{{/if}}
+{{/inline}}
+
+<ol class="breadcrumb m-0">
+     <li class="breadcrumb-item"><a href="view_prj_file_content.html?id={{id}}&code={{code01}}">{{cutStrNumber name 20}}</a></li>
+    {{#if child}}
+		{{> getChild child}}
+	{{/if}}	
+ </ol>

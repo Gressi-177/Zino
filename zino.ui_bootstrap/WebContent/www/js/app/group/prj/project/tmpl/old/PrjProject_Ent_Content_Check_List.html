@@ -1,0 +1,18 @@
+{{#if lstClone}}
+{{#each lstClone}}
+<div class="custom-control custom-checkbox mb-3 row d-flex align-items-center">
+	<input type="checkbox" class="custom-control-input item-chk-box" data-index="{{@index}}" id="customCheck{{@index}}" {{#equal stat 2}}checked{{/equal}}>
+        	<label class="custom-control-label {{#equal stat 2}}text-through{{/equal}}" for="customCheck{{@index}}">{{item}}</label>
+        	<div class="dropdown isManager d-inline">
+              <a href="javascript:void(0)" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
+                  <i class="mdi mdi-dots-vertical font-size-18"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-left">
+                  <li class="isManager"><a href="javascript:void(0)" class="dropdown-item edit-item-chk" data-index="{{@index}}"><i class="mdi mdi-pencil font-size-16 text-success mr-1"></i> {{transl 'prj_project_descr02_edit'}}</a></li>
+                  <li class="isManager"><a href="javascript:void(0)" class="dropdown-item remove-item-chk" data-index="{{@index}}"><i class="mdi mdi-trash-can font-size-16 text-danger mr-1"></i> {{transl 'prj_project_descr02_delete'}}</a></li>
+              </ul>
+          </div>
+      </div>
+{{/each}}
+{{/if}}
+	

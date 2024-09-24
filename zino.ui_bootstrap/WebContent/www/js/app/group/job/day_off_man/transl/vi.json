@@ -1,0 +1,11 @@
+{
+	"job_report_msg_user_right_error"		:	"Bạn không có quyền thực hiện thao tác này.",
+	"job_report_list_user_title"			:	"Danh sách nhân viên",
+	"job_report_label_user"					:	"Tên nhân viên",
+	"job_report_label_login"				:	"Tên đăng nhập",
+	"job_report_stat_draft"					:	"Lưu nháp",
+	"job_report_stat_pending"				:	"Đang chờ xác nhận",
+	"job_report_stat_validate"				:	"Đã xác nhận",
+	"job_report_stat_denied"				:	"Từ chối",
+	"job_report_label_hldR"					: 	"Số ngày đã nghỉ"
+}

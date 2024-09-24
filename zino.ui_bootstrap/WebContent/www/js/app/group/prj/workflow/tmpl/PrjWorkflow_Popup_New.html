@@ -1,0 +1,169 @@
+{{#* inline "epicList"}}
+<!-- epic -->
+<div class="form-group">
+	<label for="projectepic" class="col-form-label h5">{{transl 'prj_project_epic'}}</label>
+    <div>
+<!--     	<select data-name="parent" id="projectepic" class="form-control objData"> -->
+<!--     		{{#each epics}} -->
+<!--     		<option value="{{id}}"  {{#equal ../epicSelected id}} selected {{/equal}}>{{name}}</option> -->
+<!--     		{{/each}} -->
+<!--     	</select> -->
+    	 <input type="text" class="inner form-control inp-name-project" placeholder="{{transl 'prj_project_enter_name'}}"/>
+    </div>
+</div>
+{{/inline}}
+
+{{#* inline "statPrj"}}
+<!-- stat -->
+<div class="form-group">
+	<label for="projectStat" class="col-form-label h5">{{transl 'prj_project_stat'}}</label>
+	<div>
+		<select data-name="stat" id="projectStat" class="form-control objData">
+	        <option value="100100">{{transl "prj_project_stat_100100"}}</option>
+	        <option value="100200" selected>{{transl "prj_project_stat_100200"}}</option>
+	        <option value="100300">{{transl "prj_project_stat_100300"}}</option>
+	        <option value="100400">{{transl "prj_project_stat_100400"}}</option>
+	        <option value="100500">{{transl "prj_project_stat_100500"}}</option>
+	        <option value="100600">{{transl "prj_project_stat_100600"}}</option>
+	        <option value="100700">{{transl "prj_project_stat_100700"}}</option>
+	        <option value="100800">{{transl "prj_project_stat_100800"}}</option>
+	        <option value="100900">{{transl "prj_project_stat_100900"}}</option>
+		</select>
+	</div>
+</div>
+{{/inline}}
+   
+   <!-- ------------------------------main----------------------------- -->          
+   <!-- ------------------------------main----------------------------- -->     
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div id="div_create_prj_wf">
+                        <form class="outer-repeater">
+	                        <div data-repeater-list="outer-group" class="outer">
+	                        	<div data-repeater-item class="outer">
+									<!-- name -->
+	                        		<div class="form-group row mb-4">
+		                        		<div class="col-lg-12">
+			                                <label for="projectname" class="col-form-label h5">{{transl "prj_workflow_name"}} *</label>
+			                                <div>
+			                                	<input type="hidden" class="objData" data-name="lev" value="{{lev}}">
+			                                    <input id="projectname" data-name="name" type="text" class="form-control objData" placeholder="{{transl 'prj_workflow_name'}}" data-validation="required">
+			                                </div>
+		                                </div>
+		                            </div>
+
+									<!-- Workflow -->
+									<div class="row mb-4">
+										<div class="col-lg-12">
+											<div data-demo-id="flowchart">
+											 <div class="jtk-demo-main">
+												 <div class="jtk-demo-canvas canvas-wide flowchart-demo jtk-surface jtk-surface-nopan" id="canvas">
+													<div class="window jtk-node flowchartW0" id="flowchartW0"><strong>{{ transl "prj_workflow_stat_new"}}</strong><br/><br/></div>
+				
+													<div class="window jtk-node flowchartW1" id="flowchartW1"><strong>{{ transl "prj_workflow_stat_todo"}}</strong><br/><br/></div>
+													<div class="window jtk-node flowchartW2" id="flowchartW2"><strong>{{ transl "prj_workflow_stat_progress"}}</strong><br/><br/></div>
+													<div class="window jtk-node flowchartW3" id="flowchartW3"><strong>{{ transl "prj_workflow_stat_review"}}</strong><br/><br/></div>
+													<div class="window jtk-node flowchartW4" id="flowchartW4"><strong>{{ transl "prj_workflow_stat_done"}}</strong><br/><br/></div>
+													
+													<div class="window jtk-node flowchartW5" id="flowchartW5"><strong>{{ transl "prj_workflow_stat_close"}}</strong><br/><br/></div>
+													<div class="window jtk-node flowchartW6" id="flowchartW6"><strong>{{ transl "prj_workflow_stat_unresolved"}}</strong><br/><br/></div>
+													<div class="window jtk-node flowchartW7" id="flowchartW7"><strong>{{ transl "prj_workflow_stat_cancel"}}</strong><br/><br/></div>
+												 </div>
+											 </div>
+										 </div>
+										</div>
+								 	</div>
+		                            
+									<!-- member -->
+									<div class="row mb-4">
+									 	<div class="col-lg-12">
+											<div data-repeater-list="inner-group" class="inner form-group mb-0 row">
+												<div class="col-lg-12">
+													<label class="col-form-label h5">{{transl 'prj_project_add_team'}}</label>
+													<div  data-repeater-item class="inner ml-md-auto">
+														<div class="mb-3 row align-items-center">
+															<div class="col-md-3 hide">
+																<div class="mt-2 mt-md-0">
+																	<select class="form-control" id="sel_member_type">
+																		<option value="0">{{transl 'prj_project_member_level'}}</option>
+																		<option value="0">{{transl 'prj_project_lev_bas'}}</option>
+																		<option value="1" selected>{{transl 'prj_project_lev_haute'}}</option>
+																	</select>
+																</div>
+															</div>
+															<div class="col-md-5">
+																<div class="mt-2 mt-md-0">
+																	<select class="form-control" id="sel_member_level">
+																		<option value="0">{{transl 'prj_project_member_level_manager'}}</option>
+																		<option value="1">{{transl 'prj_project_member_level_reporter'}}</option>
+																		<option value="2" selected>{{transl 'prj_project_member_level_worker'}}</option>
+																		<option value="3">{{transl 'prj_project_member_level_watcher'}}</option>
+																	</select>
+																</div>
+															</div>
+															<div class="col-md-7">
+																<input type="text" class="inner form-control inp-name-member" placeholder="{{transl 'prj_project_enter_name'}}"/>
+															</div>
+															
+														</div>
+													</div>
+												</div>
+											</div>
+										 <div class="row justify-content-end">
+											 <div class="col-lg-12" id="div_list_member"></div>
+										 </div>
+									   	</div>
+									   	
+								 	</div>
+	                        	</div>
+	                        </div>
+                        </form>
+                        
+						<!-- avatar -->
+						<div class="row mb-4">
+							<div class="col-lg-6">
+								<div id="div_prj_avatar_new">
+									<label class="col-form-label h5">{{transl 'prj_project_attached_logo'}}</label>
+									<div>
+										<form class="dropzone inputfile">
+											<div class="fallback">
+												<input data-name="file" type="file" data-typ01="1" data-typ02="1"/>
+											</div>
+			
+											<div class="dz-message needsclick">
+												<div class="mb-3">
+													<i class="display-4 text-muted bx bxs-cloud-upload"></i>
+												</div>
+												<h4>{{transl 'prj_project_drop_files'}}</h4>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<!-- doc -->
+								<div id="div_prj_doc_new">
+									<label class="col-form-label h5">{{transl 'prj_project_attached_files'}}</label>
+									<div>
+										<form class="dropzone inputfile">
+											<div class="fallback">
+												<input data-name="file" type="file" multiple />
+											</div>
+			
+											<div class="dz-message needsclick">
+												<div class="mb-3">
+													<i class="display-4 text-muted bx bxs-cloud-upload"></i>
+												</div>
+												<h4>{{transl 'prj_project_drop_files'}}</h4>
+											</div>
+										</form>
+									</div>
+								 </div>
+							</div>
+						</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>

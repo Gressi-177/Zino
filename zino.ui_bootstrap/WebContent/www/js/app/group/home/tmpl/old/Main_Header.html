@@ -1,0 +1,356 @@
+<div class="navbar-header">
+    <div class="d-flex">
+        <!-- LOGO -->
+        <div class="navbar-brand-box">
+            <a data-route="VI_MAIN/prj_task_list" data-url="index.html" class="hnv-route logo logo-dark">
+                <span class="logo-sm">
+                    <img class="img-company avatar-sm mr-4 rounded-circle" src="{{url}}img/prj/companies/img-1.png" alt="" height="22">
+                </span>
+                <span class="logo-lg d-flex justify-content-center">
+                    <img class="img-company avatar-sm mr-4 rounded-circle" src="{{url}}img/prj/companies/img-1.png" alt="" height="17">
+                </span>
+            </a>
+
+            <a data-route="VI_MAIN/prj_task_list" data-url="index.html" class="hnv-route logo logo-light">
+                <span class="logo-sm">
+                    <img class="img-company avatar-sm mr-4 rounded-circle" src="{{url}}img/prj/companies/img-1.png" alt="" height="22">
+                </span>
+                <span class="logo-lg d-flex justify-content-center">
+                    <img class="img-company avatar-sm mr-4 rounded-circle" src="{{url}}img/prj/companies/img-1.png" alt="" height="19">
+                </span>
+            </a>
+        </div>
+
+        <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
+            <i class="fa fa-fw fa-bars"></i>
+        </button>
+
+        <!-- App Search-->
+        <!-- {{#if isShowSearch}}
+        <form class="app-search d-none d-lg-block" onsubmit="return false">
+            <div class="position-relative">
+                <input type="text" class="form-control inp-search" placeholder="{{transl 'prj_project_header_search_enter'}}">
+                <span class="bx bx-search-alt"></span>
+            </div>
+        </form>
+        {{/if}} -->
+    </div>
+
+    <div class="d-flex">
+    	<div class="dropdown dropdown-mega d-none d-lg-block ml-2">
+            <button type="button" class="btn header-item waves-effect d-flex justify-content-center align-items-center" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+                <i class="bx bx-menu-alt-left font-size-20"></i>
+                <i class="mdi mdi-chevron-down"></i> 
+            </button>
+            <div id="div-menu-functions" class="dropdown-menu dropdown-menu-center p-4 dropdown-menu-right">
+                <div class="row">
+                	<div class="col-md-3">
+                        <h4 class="font-size-17 mt-0" style="color: #3333c7e8;">{{transl 'prj_project_sidebar_prj'}}</h5>
+                        
+                        <ul class="list-unstyled megamenu-list">
+                        	<li>
+                                <a data-route="VI_MAIN/prj_dashboard" data-url="view_prj_dashboard.html" class="hnv-route">{{transl 'prj_project_sidebar_dashboard'}}</a>
+                            </li>
+                        </ul>
+
+                        <h5 class="font-size-14 mt-0 has-right" data-right="view:100|101|40000001|40000002"><i>{{transl 'prj_project_sidebar_prj'}}</i></h5>
+                        <ul class="list-unstyled megamenu-list has-right" data-right="view:100|101|40000001|40000002">
+                            <li class="has-right" data-right="view:100|101|40000001">
+                                <a data-route="VI_MAIN/prj_project_list" data-url="view_prj_project_list.html" class="hnv-route">&nbsp;&nbsp;{{transl 'prj_project_sidebar_prj_list'}}</a>
+                            </li>
+                            <li class="has-right" data-right="view:100|102|40000002" data-external-mem="true">
+                                <a data-route="VI_MAIN/prj_project_new" data-url="view_prj_project_new.html" class="hnv-route">&nbsp;&nbsp;{{transl 'prj_project_sidebar_prj_create'}}</a>
+                            </li>
+                        </ul>
+
+                        <ul class="list-unstyled megamenu-list">
+                            <li>
+                                <a data-route="VI_MAIN/prj_project_new" data-url="view_prj_task_list.html" class="hnv-route">{{transl 'prj_project_sidebar_task_board'}}</a>
+                            </li>
+                            <li data-external-mem="true">
+                                <a data-route="VI_MAIN/prj_sprint" data-url="view_prj_sprint.html" class="hnv-route">{{transl 'prj_project_sidebar_sprint_board'}}</a>
+                            </li>
+                            <li data-external-mem="true">
+                                <a data-route="VI_MAIN/prj_workflow" data-url="view_prj_workflow.html" class="hnv-route">{{transl 'prj_project_sidebar_workflow'}}</a>
+                            </li>
+                        </ul>
+
+                        <h5 class="font-size-14 mt-0 has-right" data-right="view:100|101|40001001|40002001" data-external-mem="true"><i>{{transl 'prj_project_sidebar_testflow'}}</i></h5>
+                        <ul class="list-unstyled megamenu-list has-right" data-right="view:100|101|40001001|40002001" data-external-mem="true">
+                            <li class="has-right" data-right="view:100|101|40001001">
+                                <a data-route="VI_MAIN/prj_test_unit" data-url="view_prj_test_unit.html" class="hnv-route">&nbsp;&nbsp;{{transl 'prj_project_sidebar_test_unit'}}</a>
+                            </li>
+                            <li class="has-right" data-right="view:100|101|40002001">
+                                <a data-route="VI_MAIN/prj_test_campaign" data-url="view_prj_test_campaign.html" class="hnv-route">&nbsp;&nbsp;{{transl 'prj_project_sidebar_test_group'}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- --------------------------------------------------------------------------------------------- -->
+              		<div class="col-md-3">
+                         <h4 class="font-size-17 mt-0" style="color: #3333c7e8;">{{transl 'prj_project_sidebar_tools'}}</h5>
+                         
+                         <ul class="list-unstyled megamenu-list">
+                             <li class="hide">
+                                 <a data-route="VI_MAIN/prj_email" data-url="view_prj_email.html" class="hnv-route" data-external-mem="true">{{transl 'prj_project_sidebar_email'}}</a>
+                             </li>
+                             <li>
+                                 <a data-route="VI_MAIN/prj_chatroom" data-url="view_prj_chat_room.html" class="hnv-route">{{transl 'prj_project_sidebar_chat'}}</a>
+                             </li>
+                        </ul>
+
+                        <h5 class="font-size-14 mt-0 has-right" data-right="view:100|101|50000001|50000101" data-external-mem="true"><i>{{transl 'prj_project_sidebar_commu'}}</i></h5>
+                        <ul class="list-unstyled megamenu-list has-right" data-right="view:100|101|50000001|50000101" data-external-mem="true">
+                             <li class="has-right" data-right="view:100|101|50000001">
+                                <a data-route="VI_MAIN/prj_email_group" data-url="view_prj_email_group.html" class="hnv-route">&nbsp;&nbsp;{{transl 'prj_project_sidebar_email_group'}}</a>
+                            </li>
+                            <li class="has-right" data-right="view:100|101|50000101">
+                                <a data-route="VI_MAIN/prj_email_campaign" data-url="view_prj_email_campaign.html" class="hnv-route">&nbsp;&nbsp;{{transl 'prj_project_sidebar_email_campaign'}}</a>
+                            </li>
+                        </ul>
+
+                        <ul class="list-unstyled megamenu-list" data-external-mem="true">  
+                            <li>
+                                <a data-route="VI_MAIN/prj_team_planning" data-url="view_prj_team_planning.html" class="hnv-route">{{transl 'prj_project_sidebar_team_planning'}}</a>
+                            </li>
+                            <li>
+                                <a data-route="VI_MAIN/prj_appointment_list" data-url="view_prj_appointment_list.html" class="hnv-route">{{transl 'prj_project_sidebar_schedule'}}</a>
+                            </li>
+                             
+                         </ul>
+                     </div>
+                    <!-- --------------------------------------------------------------------------------------------- -->
+                     <div class="col-md-3">
+                        <h4 class="font-size-17 mt-0" style="color: #3333c7e8;">{{transl 'prj_project_sidebar_others'}}</h5>
+                        
+                        <h5 class="font-size-14 mt-0 has-right" data-right="view:100|101|30000011|30000012" data-external-mem="true"><i>{{transl 'prj_project_sidebar_partner'}}</i></h5>
+                        <ul class="list-unstyled megamenu-list has-right" data-right="view:100|101|30000011|30000012" data-external-mem="true">
+                            <li class="has-right" data-right="view:100|101|30000011">
+                                <a data-route="VI_MAIN/prj_partner_list" data-url="view_prj_partner_list.html" class="hnv-route">{{transl 'prj_project_sidebar_partner_list'}}</a>
+                            </li>
+                            <li class="has-right" data-right="view:100|101|30000012">
+                                <a data-route="VI_MAIN/prj_partner_new" data-url="view_prj_partner_new.html" class="hnv-route">{{transl 'prj_project_sidebar_partner_create'}}</a>
+                            </li>
+                        </ul>
+                        
+                        <h5 class="font-size-14 mt-0 has-right" data-right="view:100|101|1000001|1000002" data-external-mem="true"><i>{{transl 'prj_project_sidebar_user'}}</i></h5>
+                        <ul class="list-unstyled megamenu-list has-right" data-right="view:100|101|1000001|1000002" data-external-mem="true">
+                            <li class="has-right" data-right="view:100|101|1000001">
+                                <a data-route="VI_MAIN/prj_user" data-url="view_prj_user.html" class="hnv-route">&nbsp;&nbsp;{{transl 'prj_project_sidebar_user'}}</a>
+                            </li>
+                            <li class="has-right" data-right="view:100|102|1000002">
+                                <a data-route="VI_MAIN/prj_user_new" data-url="view_prj_user_new.html" class="hnv-route">&nbsp;&nbsp;{{transl 'prj_project_sidebar_user_create'}}</a>
+                            </li>
+                            <li class="has-right" data-right="view:100|101|1000001">
+                                <a data-route="VI_MAIN/prj_user_grp" data-url="view_prj_user_grp.html" class="hnv-route">&nbsp;&nbsp;{{transl 'prj_project_sidebar_user_grp'}}</a>
+                            </li>
+                        </ul>
+                        <h5 class="font-size-14 mt-0 has-right" data-right="view:100|101|40000101|40000102" data-external-mem="true"><i>{{transl 'prj_project_sidebar_files'}}</i></h5>
+                        <ul class="list-unstyled megamenu-list" data-external-mem="true" data-right="view:100|101|40000101|40000102">
+                            <li class="has-right" data-right="view:100|101|40000101">
+                                <a data-route="VI_MAIN/prj_file_list" data-url="view_prj_file_list.html" class="hnv-route">&nbsp;&nbsp;{{transl 'prj_project_sidebar_files_list'}}</a>
+                            </li>
+                            <li class="has-right" data-right="view:100|102|40000102">
+                                <a data-route="VI_MAIN/prj_file_new" data-url="view_prj_file_new.html" class="hnv-route">&nbsp;&nbsp;{{transl 'prj_project_sidebar_files_create'}}</a>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled megamenu-list">
+                            <li>
+                                <a data-route="VI_MAIN/prj_sticky_note" data-url="view_prj_sticky_note.html" class="hnv-route">{{transl 'prj_project_sidebar_sticky_note'}}</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                     <div class="col-md-3">
+                         <div>
+                             <img src="{{url}}img/prj/megamenu-img.png" alt="" class="img-fluid mx-auto d-block">
+                         </div>
+                     </div>
+                </div>
+
+            </div>
+        </div>
+		{{#if isShowSearch}}
+        <div class="dropdown d-inline-block d-lg-none">
+            <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="mdi mdi-magnify"></i>
+            </button>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
+                aria-labelledby="page-header-search-dropdown">
+    
+                <form class="p-3" onsubmit="return false">
+                    <div class="form-group m-0">
+                        <div class="input-group">
+                            <input type="text" class="form-control inp-search-responsive" placeholder="{{transl 'prj_project_header_search_enter'}}" aria-label="">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button" id="btn_search_responsive"><i class="mdi mdi-magnify"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        {{/if}}
+
+  	    <div class="dropdown d-inline-block">
+              <button id="btn_page_reload" type="button" class="btn header-item waves-effect">
+                <img class="" src="{{url}}img/prj/icon/icon-refresh.png" alt="Tải lại" height="22" title="Tải lại">
+            </button>
+        </div>
+        
+        <div class="dropdown d-inline-block">
+            <button type="button" class="btn header-item waves-effect"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img class="" src="{{url}}img/flags/{{lan}}.svg" alt="Header Language" height="16">
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+              	<!-- vietnam-->
+                <a href="javascript:void(0);" class="dropdown-item notify-item a-languge" data-lan="vi" data-lanId="1" data-loc="vi-VN">
+                    <img src="{{url}}img/flags/vi.svg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">{{transl 'prj_project_lan_vn'}}</span>
+                </a>
+                
+    			<!-- english-->
+                <a href="javascript:void(0);" class="dropdown-item notify-item a-languge" data-lan="en" data-lanId="2" data-loc="en-EN">
+                    <img src="{{url}}img/flags/en.svg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">{{transl 'prj_project_lan_us'}}</span>
+                </a>
+                
+                <!-- fr-->
+                <a href="javascript:void(0);" class="dropdown-item notify-item a-languge" data-lan="fr" data-lanId="3" data-loc="fr-FR">
+                    <img src="{{url}}img/flags/fr.svg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">{{transl 'prj_project_lan_fr'}}</span>
+                </a>
+            </div>
+        </div>
+
+<!--         <div class="dropdown d-none d-lg-inline-block ml-1"> -->
+<!--             <button type="button" class="btn header-item noti-icon waves-effect" -->
+<!--                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+<!--                 <i class="bx bx-customize"></i> -->
+<!--             </button> -->
+<!--             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right"> -->
+<!--                 <div class="px-lg-2"> -->
+<!--                     <div class="row no-gutters"> -->
+<!--                         <div class="col"> -->
+<!--                             <a class="dropdown-icon-item" href="#"> -->
+<!--                                 <img src="{{url}}img/prj/brands/github.png" alt="Github"> -->
+<!--                                 <span>GitHub</span> -->
+<!--                             </a> -->
+<!--                         </div> -->
+<!--                         <div class="col"> -->
+<!--                             <a class="dropdown-icon-item" href="#"> -->
+<!--                                 <img src="{{url}}img/prj/brands/bitbucket.png" alt="bitbucket"> -->
+<!--                                 <span>Bitbucket</span> -->
+<!--                             </a> -->
+<!--                         </div> -->
+<!--                         <div class="col"> -->
+<!--                             <a class="dropdown-icon-item" href="#"> -->
+<!--                                 <img src="{{url}}img/prj/brands/dribbble.png" alt="dribbble"> -->
+<!--                                 <span>Dribbble</span> -->
+<!--                             </a> -->
+<!--                         </div> -->
+<!--                     </div> -->
+
+<!--                     <div class="row no-gutters"> -->
+<!--                         <div class="col"> -->
+<!--                             <a class="dropdown-icon-item" href="#"> -->
+<!--                                 <img src="{{url}}img/prj/brands/dropbox.png" alt="dropbox"> -->
+<!--                                 <span>Dropbox</span> -->
+<!--                             </a> -->
+<!--                         </div> -->
+<!--                         <div class="col"> -->
+<!--                             <a class="dropdown-icon-item" href="#"> -->
+<!--                                 <img src="{{url}}img/prj/brands/mail_chimp.png" alt="mail_chimp"> -->
+<!--                                 <span>Mail Chimp</span> -->
+<!--                             </a> -->
+<!--                         </div> -->
+<!--                         <div class="col"> -->
+<!--                             <a class="dropdown-icon-item" href="#"> -->
+<!--                                 <img src="{{url}}img/prj/brands/slack.png" alt="slack"> -->
+<!--                                 <span>Slack</span> -->
+<!--                             </a> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                 </div> -->
+<!--             </div> -->
+<!--         </div> -->
+
+<!--         <div class="dropdown d-none d-lg-inline-block ml-1"> -->
+<!--             <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen"> -->
+<!--                 <i class="bx bx-fullscreen"></i> -->
+<!--             </button> -->
+<!--         </div> -->
+
+        <div class="dropdown d-inline-block">
+            <button type="button" class="btn header-item noti-icon waves-effect" id="btn_notify_dropdown"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="bx bx-bell bx-tada"></i>
+                <span class="badge badge-danger badge-pill" id="sp_nbNew_notify"></span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0" aria-labelledby="btn_notify_dropdown" id="div_notify_content"></div>
+        </div>
+
+        <div class="dropdown d-inline-block">
+            <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{#if user.avatar}}
+                <img class="rounded-circle header-profile-user" src="{{url_avatar user.avatar.urlPrev}}" alt="">
+                {{else}}
+                <div class="rounded-circle header-profile-user text-white text-uppercase" style="margin: 0 auto; background-color: {{reqSrcTextColor user.login01}}"><div class="text-middle">{{reqSrcTextAvatar user.login01}}</div></div>
+                {{/if}}
+                <span class="d-none d-xl-inline-block ml-1">{{user.login01}}</span>
+                <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+            </button>
+            <div id="div-menu-user-dropdown" class="dropdown-menu dropdown-menu-right" >
+                <!-- item-->
+                <div>
+	                <a class="dropdown-item hnv-route" data-route="VI_MAIN/prj_user_profile_ent" data-url="view_prj_user_profile.html" id="a_profile" target="_self"><i class="bx bx-user font-size-16 align-middle mr-1"></i>{{transl 'prj_project_header_profile'}}</a>
+	                <div class="dropdown-divider"></div>
+                </div>
+                
+                <div id="div_menu_report" data-right="view:100|101|2002001" data-external-mem="true">
+	                <a class="dropdown-item hnv-route" data-route="VI_MAIN/prj_job_report" data-url="view_prj_job_report.html" id="a_report" target="_self"><i class="bx bx-food-menu font-size-16 align-middle mr-1"></i>{{transl 'prj_project_header_cra'}}</a>
+	                <div class="dropdown-divider"></div>
+                </div>
+                
+                <div  id="div_menu_dayoff"  data-right="view:100|101|2020001">
+                	<a  class="dropdown-item hnv-route" data-route="VI_MAIN/prj_job_off" data-url="view_prj_job_off.html" target="_self"><i class="bx bx-calendar-event font-size-16 align-middle mr-1"></i>{{transl 'prj_project_header_dayoff'}}</a>
+               		 <div class="dropdown-divider"></div>
+                </div>
+                
+                <div  id="div_menu_report_man"  data-right="view:100|105|2002005">
+                	 <a  class="dropdown-item hnv-route" data-route="VI_MAIN/prj_job_report_man" data-url="view_prj_job_report_man.html" target="_self"><i class="bx bx-spreadsheet font-size-16 align-middle mr-1"></i>{{transl 'prj_project_header_cra_management'}}</a>
+                	<div class="dropdown-divider"></div>
+                </div>
+               
+                <div  id="div_menu_dayoff_man"  data-right="view:100|105|2020005">
+                	 <a class="dropdown-item hnv-route" data-route="VI_MAIN/prj_job_off_man" data-url="view_prj_job_off_man.html" target="_self"><i class="bx bx-calendar-event font-size-16 align-middle mr-1"></i>{{transl 'prj_project_header_dayoff_management'}}</a>
+               		 <div class="dropdown-divider"></div>
+                </div>
+             
+                <div id="div_menu_holiday"  data-right="view:100|101|2001001">
+                 	<a class="dropdown-item hnv-route" data-route="VI_MAIN/prj_job_holiday" data-url="view_prj_job_holiday.html" target="_self"><i class="bx bxs-drink font-size-16 align-middle mr-1"></i>{{transl 'prj_project_header_holiday'}}</a>
+                	<div class="dropdown-divider"></div>
+                </div>
+                
+                <!-- <div id="div_menu_tpy_cat"  data-right="view:">
+                 	<a class="dropdown-item hnv-route" data-route="VI_MAIN/prj_task_list" data-url="view_prj_job_category.html" target="_self"><i class="bx bx-briefcase-alt font-size-16 align-middle mr-1"></i>{{transl 'prj_project_header_project'}}</a>
+                	<div class="dropdown-divider"></div>
+                </div> -->
+                
+                <div id="div_menu_tpy_cat"  data-right="view:100|101|7000001">
+                    <a class="dropdown-item hnv-route" data-route="VI_MAIN/prj_job_cat" data-url="view_prj_job_category.html" target="_self"><i class="bx bx-briefcase-alt font-size-16 align-middle mr-1"></i>{{transl 'prj_project_header_project'}}</a>
+                   <div class="dropdown-divider"></div>
+               </div>
+                
+                <a class="dropdown-item text-danger" id="a_disconnect" href="#"><i class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i>{{transl 'prj_project_header_disconnect'}}</a>
+            </div>
+        </div>
+
+<!--         <div class="dropdown d-inline-block" > -->
+<!--             <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect"> -->
+<!--                 <i class="bx bx-cog bx-spin"></i> -->
+<!--             </button> -->
+<!--         </div> -->
+
+    </div>
+</div>
+            

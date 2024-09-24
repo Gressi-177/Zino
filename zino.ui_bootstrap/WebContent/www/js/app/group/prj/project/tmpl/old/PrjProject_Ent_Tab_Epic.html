@@ -1,0 +1,44 @@
+<div class="card">
+   <div class="card-body">
+	   	<div class="media">
+	   		<div class="col-sm-9">
+	   			<h4 class="card-title mb-4 media-body d-inline-block">{{transl 'prj_project_list_epic'}}</h4>
+	   			<span class="epic-filter text-muted" id="sp_text_filter_epic"></span>
+	   		</div>
+	   		<div class="col-sm-3 no-padding">
+	             <div class="dropdown float-right">
+	             	 <a id="btn_add_epic" class="isManager cursor-pointer"  title="{{transl 'prj_project_add_epic'}}">
+	             	 	<i class="mdi mdi-plus font-size-18 text-success"></i>
+	             	 </a>
+                     
+                     <a href="javascript:void(0)" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
+                         <i class="mdi mdi-dots-vertical font-size-18"></i>
+                     </a>
+                     
+                    <a data-divtoogle="#tabEpic" class="btn-resize cursor-pointer" data-toggle="tooltip" data-placement="top" title="" data-original-title="Resize">
+	                   <i class="mdi mdi-window-minimize font-size-16 text-primary"></i>
+	                </a>
+	                
+                     <ul class="dropdown-menu dropdown-menu-right">
+                         <li><span id="btn_add_epic_others" class="dropdown-item cursor-pointer"><i class="mdi mdi-plus font-size-16 text-success mr-1"></i>{{transl 'prj_project_add_epic'}}</span></li>
+                        <li><span id="btn_refresh_epic" class="dropdown-item cursor-pointer"><i class="mdi mdi-refresh font-size-16 text-primary mr-1"></i>{{transl 'common_refresh'}}</span></li>
+                        <li><span id="btn_filter_complete_epic" class="dropdown-item cursor-pointer"><i class="mdi mdi-hand-okay text-success font-size-16 mr-1"></i>{{transl 'prj_project_epic_search_compete'}}</span></li>
+                     	<li><span id="btn_filter_not_complete_epic" class="dropdown-item cursor-pointer"><i class="mdi mdi-hand-pointing-right font-size-16 text-primary mr-1"></i>{{transl 'prj_project_epic_search_not_compete'}}</span></li>
+                     	<li><span id="btn_filter_search_epic" class="dropdown-item cursor-pointer"><i class="mdi mdi-card-search-outline font-size-16 text-primary mr-1"></i>{{transl 'prj_project_epic_search_inp'}}</span></li>
+                         
+<!--                         <li><span data-divtoogle="#tabEpic" class="btn-resize dropdown-item"><i class="mdi mdi-window-minimize font-size-16 text-primary mr-1"></i><span class="label-resize">{{transl 'prj_project_resize_min'}}</span></span></li> -->
+                     </ul>
+                 </div>
+	         </div>
+		</div>
+		
+		<div class="media epic-filter" style="display: none" id="div_search_epic">
+			<div class="col-sm-12">
+				<input type="text" id="inp_filter_epic" class="form-control" placeholder="{{transl 'prj_project_epic_search_inp_enter'}}"/>
+			</div>
+		</div>
+		
+        <div id="tabEpic" class="table-responsive">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+{
+    "sidebar_aut_user": "Users",
+    "sidebar_aut_user_typ_01": "User Management",
+  
+    "sidebar_mat": "Products",
+    "sidebar_mat_material": "Products",
+    "sidebar_mat_unit": "Unit Management",
+    "sidebar_mat_alarm": "Alarm Management",
+    "sidebar_mat_bcode": "Barcode Management",
+  
+    "sidebar_tpy_cat": "Product Categories Management",
+  
+    "sidebar_shp_vendor": "Sales",
+    "sidebar_shp_checkStock": "Stock Checking",
+    "sidebar_shp_per_info": "Business Information",
+  
+    "sidebar_sor_order_in": "Inbound Orders",
+  
+    "sidebar_sor_order_in_buy": "Purchase Orders",
+    "sidebar_sor_order_in_bal": "Balance Orders",
+    "sidebar_sor_order_in_transfert": "Transfer Orders",
+    "sidebar_mat_ware_house": "Warehouse Management",
+  
+    "sidebar_sor_order_out": "Outbound Orders",
+  
+    "sidebar_sor_order_out_sell": "Sales Orders",
+    "sidebar_sor_order_out_bal": "Balance Orders from Stock",
+    "sidebar_sor_order_out_bal_stk": "Balance Orders due to Stock Loss",
+    "sidebar_sor_order_out_bal_fail": "Balance Orders due to Expiry",
+    "sidebar_sor_order_out_bal_other": "Other Reasons for Balance Orders",
+    "sidebar_sor_order_out_transfert": "Transfer Orders",
+    "sidebar_sor_order_out_stat": "Delivery Status Management",
+    "sidebar_sor_deal": "Promotion Management",
+  
+    "sidebar_sor_order": "Order Summary",
+  
+    "sidebar_mat_stock_rq": "Stock Requisition",
+    "sidebar_mat_stock_rq_month": "Monthly Stock Requisition",
+    "sidebar_report_sor_order_out_sale": "Sales Summary",
+    "sidebar_report_sor_order_out_sale_analyze": "Sales Analysis",
+    "sidebar_report_sor_order_in_warehouse": "Inbound Warehouse Summary",
+    "sidebar_report_sor_order_out_warehouse": "Outbound Warehouse Summary",
+  
+    "sidebar_nso": "Posts",
+    "sidebar_nso_post": "Blog",
+    "sidebar_nso_offer": "Offers",
+  
+    "dashboard_header_profile": "Profile",
+    "dashboard_header_cra": "Declare Working Hours",
+    "dashboard_header_dayoff": "Request Day Off",
+    "dashboard_header_cra_management": "Working Hours Management",
+    "dashboard_header_dayoff_management": "Day Off Management",
+    "dashboard_header_holiday": "National Holiday Management",
+    "dashboard_header_project": "Project Management for Time Tracking",
+    "dashboard_header_disconnect": "Logout",
+    "dashboard_header_setting": "Settings",
+    "dashboard_header_search_enter": "Enter keyword...",
+    "dashboard_notify_view_more": "View More",
+  
+    "dashboard_lan_us": "English",
+    "dashboard_lan_vn": "Vietnamese",
+    "dashboard_lan_fr": "French",
+  
+    "--End------------------------": "----------------------------------------"
+  }
+  

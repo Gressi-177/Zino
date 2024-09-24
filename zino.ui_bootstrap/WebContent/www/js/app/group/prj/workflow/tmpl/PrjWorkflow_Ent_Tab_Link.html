@@ -1,0 +1,71 @@
+<div class="card">
+   <div class="card-body">
+	   	<div class="media">
+	   		<div class="col-sm-5">
+	   			<h4 class="card-title mb-4 media-body">{{transl 'prj_project_tasks'}}</h4>
+	   		</div>
+	   		<div class="col-sm-7 isManager">
+	             <div class="text-right">
+	                 <button id="btn_add_link" type="button" class="btn btn-success btn-rounded waves-effect waves-light btn-sm"><i class="mdi mdi-plus mr-1"></i> {{transl 'prj_project_add_member'}}</button>
+	             	<a id="a_btn_save_link" class="mr-2 text-primary hide action-item-link" data-toggle="tooltip" data-placement="top" title="" data-original-title="Save">
+		            	<i class="mdi mdi-content-save font-size-18 action-item"></i>
+		            </a>
+		            <a id="a_btn_cancel_link" class="mr-2 text-danger hide action-item-link" data-toggle="tooltip" data-placement="top" title="" data-original-title="Cancel">
+		            	<i class="mdi mdi-close font-size-18"></i>
+		            </a>
+		            <a data-divtoogle="#tabLink" class="btn-resize" data-toggle="tooltip" data-placement="top" title="" data-original-title="Resize">
+		            	 <i class="mdi mdi-window-minimize font-size-18"></i>
+		            </a>
+	             </div>
+	         </div>
+		</div>
+        <div id="tabLink" class="table-responsive">
+            <table class="table table-centered table-nowrap">
+            	<thead>
+            		<tr>
+            			<th class="hide action-item-link isManager"></th>
+            			<th>{{transl 'prj_project_code_task'}}</th>
+            			<th>{{transl 'prj_project_task_name'}}</th>
+            		</tr>
+            	</thead>
+			    <tbody>
+			     {{#each this}}
+			        <tr class="member-item" data-memid="{{entId02}}">
+			            {{#ifOrs isOwner notModif}}
+				            <td class="hide action-item-link isManager"></td>
+							<td><span class="">{{ent02.code}}</span></td>
+							<td><span class="">{{ent02.name}}</span></td>
+			            {{else}}
+				            <td class="hide action-item-link isManager">
+				            	<div class="dropdown">
+		                             <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
+		                                 <i class="mdi mdi-dots-vertical font-size-18"></i>
+		                             </a>
+		                             <ul class="dropdown-menu">
+		                                 <li>
+		                                 	<span data-memid="{{entId02}}" class="dropdown-item link-edit"><i class="mdi mdi-pencil font-size-16 text-success mr-1"></i>{{transl 'prj_project_member_header_edit'}}</span>
+		                                 </li>
+		                                 <li>
+		                                 	<span data-memid="{{entId02}}" class="dropdown-item link-delete"><i class="mdi mdi-trash-can font-size-16 text-danger mr-1"></i>{{transl 'prj_project_member_header_delete'}}</span>
+		                                 </li>
+		                             </ul>
+		                         </div>
+	                        </td>
+							<td><span class="">{{ent02.code}}</span></td>
+							<td><span class="">{{ent02.name}}</span></td>
+			            {{/ifOrs}}
+			        </tr>
+			     {{/each}}
+			    </tbody>
+			</table>
+        </div>
+        <div class="hide action-item-link isManager">
+        	<div class="mb-3 row">
+        		
+	             <div class="col-md-12">
+			    	<input type="text" class="inner form-control ui-autocomplete-input" id="inp_list_task" placeholder="{{transl 'prj_project_tag_enter'}}">
+	        	</div>
+        	</div>
+        </div>
+    </div>
+</div>

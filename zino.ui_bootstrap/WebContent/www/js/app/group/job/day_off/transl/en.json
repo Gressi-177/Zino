@@ -1,0 +1,10 @@
+{
+    "job_report_msg_user_right_error"                   :"You do not have permission to perform this movement.",
+	"prj_project_add_member"                            : "Edit",
+	"prj_project_attached_files"						: "Attached files",
+	"prj_project_drop_files"							: "Drop files here or click to upload.",
+    "job_rp_msgbox_confirm_submit_btn1"                 : "Agree and send",
+    "job_rp_msgbox_confirm_submit_btn2"                 : "Back",
+
+    "job_report_label_hldR"                             : "Number of days off"
+}

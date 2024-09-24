@@ -1,0 +1,79 @@
+<div class="card">
+    <div class="card-body">
+        <div class="media">
+	   		<div class="col-8 col-sm-8">
+	   			 {{#unless isViewSprint}}
+	   			<h4 class="card-title mb-4">{{#equal typ02 1}} {{transl 'prj_project_eval_title_epic'}} {{else}}{{transl 'prj_project_eval_title'}}{{/equal}}</h4>
+	   			{{else}}
+	   			<h4 class="card-title mb-4">{{transl 'prj_sprint_eval_title'}}</h4>
+	   			{{/unless}}
+	   		</div>
+	   		<div class="col-4 col-sm-4">
+	             <div class="text-right">
+		            <a data-divtoogle="#tabEvaluation" class="btn-resize" data-toggle="tooltip" data-placement="top" title="" data-original-title="Resize">
+		            	 <i class="mdi mdi-window-minimize font-size-18"></i>
+		            </a>
+	             </div>
+	         </div>
+		</div>
+		{{#unless isViewSprint}}
+        <div id="tabEvaluation" class="table-responsive">
+        	<div class="media">
+        		<p class="text-muted mb-4 col-sm-12">{{transl 'prj_project_eval_msg'}}</p>
+        	</div>
+            <table class="table table-nowrap mb-0">
+                <tbody>
+                	{{#ifCond totalEpic '>' 0}}
+                	<tr>
+                        <th scope="row">{{transl 'prj_project_eval_total_epic'}} :</th>
+                        <td>{{reqFormatNumber totalEpic}}</td>
+                    </tr>
+                    {{/ifCond}}
+                    {{#ifCond totalTask '>' 0}}
+                	<tr>
+                        <th scope="row">{{transl 'prj_project_eval_total_task'}} :</th>
+                        <td>{{reqFormatNumber totalTask}}</td>
+                    </tr>
+                    {{/ifCond}}
+                    <tr>
+                        <th scope="row">{{transl 'prj_project_eval_done'}} :</th>
+                        <td>{{reqFormatNumber percentFinish}} %</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{transl 'prj_project_eval_late'}} :</th>
+                        <td>{{reqFormatNumber percentLate}} %</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{transl 'prj_project_eval_expired_msg'}} : </th>
+                        <td>{{nbWarning}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{transl 'prj_project_eval_calcel'}} :</th>
+                        <td>{{nbUnreSolved}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        {{else}}
+        <div id="tabEvaluation" class="table-responsive">
+        	<div class="media">
+        		<p class="text-muted mb-4 col-sm-12">{{transl 'prj_project_eval_msg'}}</p>
+        	</div>
+            <table class="table table-nowrap mb-0">
+                <tbody>
+                    {{#ifCond totalTask '>' 0}}
+                	<tr>
+                        <th scope="row">{{transl 'prj_project_eval_total_task'}} :</th>
+                        <td>{{reqFormatNumber totalTask}}</td>
+                    </tr>
+                    {{/ifCond}}
+                    <tr>
+                        <th scope="row">{{transl 'prj_project_eval_done'}} :</th>
+                        <td>{{reqFormatNumber percentFinish}} %</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        {{/unless}}
+    </div>
+</div>

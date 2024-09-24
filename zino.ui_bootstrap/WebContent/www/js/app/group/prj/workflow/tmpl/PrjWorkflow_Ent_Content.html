@@ -1,0 +1,115 @@
+ <div id="div_prj_info">
+	<div class="card">
+	    <div class="card-body">
+	        <div class="media">
+	        	<div>
+	        		{{#ifCond typ02 '==' 0}}
+	        		<img src="{{reqSrcAvatarPrj @root}}" alt="" class="avatar-sm mr-4 rounded-circle">
+	        		{{/ifCond}}
+	        		{{#ifCond typ02 '==' 1}}
+	        		<img src="{{reqSrcAvatarPrjEpic @root}}" alt="" class="avatar-sm mr-4 rounded-circle">
+	        		{{/ifCond}}
+	        		{{#ifCond typ02 '==' 2}}
+	        		<img src="{{reqSrcAvatarPrjTask @root}}" alt="" class="avatar-sm mr-4 rounded-circle">
+	        		{{/ifCond}}
+	        	</div>
+	            <div class="media-body overflow-hidden">
+	                <h5 class="text-truncate font-size-16 info-edit info-content {{reqClassByStat stat}}">{{name}}</h5>
+	                <input type="text" data-name="name" value="{{name}}" class="form-control objData hide content-edit isManager">
+	                {{{reqDateLate dtEnd stat}}}
+	                {{#equal typ02 0}}<a class="btn btn-success btn-rounded waves-effect waves-light btn-sm isManager" href="view_prj_tree_global.html?id={{id}}" target="_self">{{transl 'prj_project_btn_global'}}</a>{{/equal}}
+	            </div>
+	            <a id="a_btn_save" class="mr-2 text-primary hide action-item action-item-duplicate" data-toggle="tooltip" data-placement="top" title="" data-original-title="Save">
+	            	<i class="mdi mdi-content-save font-size-18 action-item"></i>
+	            </a>
+	            <a id="a_btn_cancel" class="mr-2 text-danger hide action-item-duplicate cursor-pointer" data-toggle="tooltip" data-placement="top" title="" data-original-title="Cancel">
+	            	<i class="mdi mdi-close font-size-18"></i>
+	            </a>
+	            
+	            <div class="dropdown float-right">
+	                <a href="javascript:void(0)" class="dropdown-toggle card-drop action-item-duplicate" data-toggle="dropdown" aria-expanded="false">
+	                    <i class="mdi mdi-dots-vertical font-size-18"></i>
+	                </a>
+	                <a data-divtoogle="#div_prj_content_01" class="btn-resize cursor-pointer" data-toggle="tooltip" data-placement="top" title="" data-original-title="Resize">
+	                   <i class="mdi mdi-window-minimize font-size-16 text-primary"></i>
+	                </a>
+	                <ul class="dropdown-menu dropdown-menu-right">
+	                    <li><span id="btn_add_avatar" class="dropdown-item cursor-pointer isManager"><i class="mdi mdi-plus font-size-16 text-primary mr-1"></i>{{transl 'prj_project_add_avatar'}}</span></li>
+	                    <li><span id="btn_refresh_content" class="dropdown-item cursor-pointer"><i class="mdi mdi-refresh font-size-16 text-primary mr-1"></i>{{transl 'common_refresh'}}</span></li>
+		                {{#equalOrs typ02 1 2}}
+		                 <!-- <li><span id="btn_duplicate_content" class="dropdown-item cursor-pointer isManager"><i class="mdi mdi-arrange-send-backward font-size-16 text-primary mr-1"></i>{{transl 'prj_project_duplicate'}}</span></li> -->
+		                {{/equalOrs}}
+		                <li><span id="btn_show_history" class="dropdown-item cursor-pointer"><i class="mdi mdi-history font-size-16 text-primary mr-1"></i>{{transl 'prj_history_btn'}}</span></li>
+						<li><span id="btn_delete" class="dropdown-item cursor-pointer"><i class="mdi mdi-delete font-size-16 text-primary mr-1"></i>{{transl 'common_btn_delete'}}</span></li>
+	                </ul>
+	            </div>
+	        </div>
+	        
+	        <div id="div_prj_content_01">
+	        	<div class="mt-2">
+		        	<form id="div_prj_ent_file_avatar" action="/" method="post" class="dropzone inputfile hide">
+					    <div class="fallback">
+					        <input data-name="file" type="file" data-typ01="2" />
+					    </div>
+					
+					    <div class="dz-message needsclick">
+					        <div class="mb-3">
+					            <i class="display-4 text-muted bx bxs-cloud-upload"></i>
+					        </div>
+					        <h4>{{transl 'prj_project_drop_files'}}</h4>
+					    </div>
+					</form>
+	        	</div>
+	        	<div>
+	        		<div class="row">
+	        			<div class="col-6">
+	        				<h5 class="font-size-15 mt-4 info-edit h5">{{transl 'prj_project_detail'}}</h5>
+	        			</div>
+	        			<div class="col-6 br-theme-css-stars pt-4" id="div_star_eval" style="display: none">
+							<select id="rating_01">
+				                  <option value="1">1</option>
+				                  <option value="2">2</option>
+				                  <option value="3">3</option>
+				                  <option value="4">4</option>
+				                  <option value="5">5</option>
+				            </select>
+			            </div>
+	        		</div>
+
+					<!-- Workflow -->
+					<div class="row mb-4">
+						<div class="col-lg-12">
+							<div data-demo-id="flowchart" style="margin-top: -70px;">
+								<div class="jtk-demo-main">
+									<div class="jtk-demo-canvas canvas-wide flowchart-demo jtk-surface jtk-surface-nopan" id="canvas_show">
+										<div class="window jtk-node flowchartW0" id="flowchartW0"><strong>{{ transl "prj_workflow_stat_new"}}</strong><br/><br/></div>
+				
+										<div class="window jtk-node flowchartW1" id="flowchartW1"><strong>{{ transl "prj_workflow_stat_todo"}}</strong><br/><br/></div>
+										<div class="window jtk-node flowchartW2" id="flowchartW2"><strong>{{ transl "prj_workflow_stat_progress"}}</strong><br/><br/></div>
+										<div class="window jtk-node flowchartW3" id="flowchartW3"><strong>{{ transl "prj_workflow_stat_review"}}</strong><br/><br/></div>
+										<div class="window jtk-node flowchartW4" id="flowchartW4"><strong>{{ transl "prj_workflow_stat_done"}}</strong><br/><br/></div>
+										
+										<div class="window jtk-node flowchartW5" id="flowchartW5"><strong>{{ transl "prj_workflow_stat_close"}}</strong><br/><br/></div>
+										<div class="window jtk-node flowchartW6" id="flowchartW6"><strong>{{ transl "prj_workflow_stat_unresolved"}}</strong><br/><br/></div>
+										<div class="window jtk-node flowchartW7" id="flowchartW7"><strong>{{ transl "prj_workflow_stat_cancel"}}</strong><br/><br/></div>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row ">			
+						<button class="btn btn-primary" id="btn_edit_wf">{{transl 'prj_partner_save_all'}}</button>
+					</div>
+
+					<div class="info-edit info-content info-content-description">
+						<!-- <p class="text-muted text-justify" data-name="descr01">{{{descr01}}}</p> -->
+					</div>
+					<div class="content-edit isManager hide"><textarea data-name="descr01" rows="6" cols="" class="form-control objData">{{{descr01}}}</textarea></div>
+				</div>
+		    </div>
+		</div>
+	</div>
+	
+</div>

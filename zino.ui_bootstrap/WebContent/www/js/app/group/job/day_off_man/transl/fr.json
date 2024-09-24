@@ -1,0 +1,11 @@
+{
+    "job_report_msg_user_right_error":"Vous ne disposez pas de droit pour effectuer cette action.",
+	"job_report_list_user_title":"Liste des employés",
+	"job_report_label_user":"Nom d'employé",
+	"job_report_label_login":"Pseudo",
+	"job_report_stat_draft":"Enregistrer en tant que brouillon",
+	"job_report_stat_pending":"Attente de validation",
+	"job_report_stat_validate":"Validé",
+	"job_report_stat_denied":"Rejecté",
+	"job_report_label_hldR":"Congé utilisé"
+}

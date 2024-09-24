@@ -1,0 +1,24 @@
+<tr class="mt-3"  data-id="{{id}}">
+    <td class="td-task" data-id="{{id}}">
+   		<h5 class="font-size-14 m-0">
+     	<a data-route="VI_MAIN/prj_project_ent" data-url="" class="hnv-route text-dark {{reqClassByStat stat}}">{{inf01}}</a>
+     	{{{reqDateTimeLateTask dtEnd stat}}}
+    	</h5>
+    	<p></p>
+    	<p class="font-size-12 m-0">{{{extractMsgHtml inf02 200}}}</p>
+    	<p class="font-size-12 m-0"><a class="text-dark">{{transl 'prj_project_percent'}}: {{digitFixed val05 2}} %</a></p>
+    </td>
+    <td class="d-flex justify-content-end">
+    	<div class="dropdown float-right isManager">
+           <a href="#" class="dropdown-toggle arrow-none" data-toggle="dropdown" aria-expanded="false">
+               <i class="mdi mdi-dots-vertical m-0 text-muted h5 task-option"></i>
+           </a>
+           <div class="dropdown-menu dropdown-menu-right" style="">
+               {{#equalOrs stat 0 1 2 3 4 5}}<a data-id="{{id}}" data-stat="{{stat}}" class="dropdown-item remove-task_report" href="javascript:void(0)">{{transl 'prj_task_tab_remove'}}</a>{{/equalOrs}}
+<!--                {{#equalOrs stat 0 1 2 3 5 6}}<a data-id="{{id}}" data-stat="{{stat}}" class="dropdown-item complete-task" href="#">{{transl 'prj_task_tab_complete'}}</a>{{/equalOrs}} -->
+<!--                {{#equalOrs stat 0 1 2 3 4 6}}<a data-id="{{id}}" data-stat="{{stat}}" class="dropdown-item close-task" href="#">{{transl 'prj_task_tab_close'}}</a>{{/equalOrs}} -->
+<!--                {{#equalOrs stat 0}}			<a data-id="{{id}}" data-stat="{{stat}}" class="dropdown-item span-delete-task" href="#">{{transl 'prj_task_tab_delete'}}</a>{{/equalOrs}} -->
+           </div>
+       </div>
+    </td>
+</tr>

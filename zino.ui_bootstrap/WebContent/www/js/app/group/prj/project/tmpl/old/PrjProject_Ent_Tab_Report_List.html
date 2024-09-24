@@ -1,0 +1,21 @@
+{{#if this}}
+<table class="table table-centered">
+	<!-- table-nowrap -->
+	<tbody id="tbody_report">
+		{{#each this}}
+		<tr data-id="{{id}}">
+			<td class="td-report" data-id="{{id}}">
+				<h5 class="font-size-14 m-0">
+					<a class="text-dark cursor-pointer">{{inf01}}</a>
+					{{{reqDateTimeLateTask dtEnd stat}}}
+				</h5>
+				<p></p>
+				<p class="font-size-12 m-0">{{{extractMsgHtml inf02 200}}}</p>
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+{{else}}
+<div class="mt-3">{{transl 'prj_project_report_no'}}</div>
+{{/if}}

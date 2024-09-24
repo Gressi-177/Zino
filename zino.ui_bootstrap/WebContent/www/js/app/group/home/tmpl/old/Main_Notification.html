@@ -1,0 +1,47 @@
+<div class="p-3">
+      <div class="row align-items-center">
+          <div class="col">
+              <h6 class="m-0">{{transl 'prj_dashboard_notify_title'}}</h6>
+          </div>
+          <div class="col-auto" id="btn_delete_all">
+            <a href="#" class="small">{{transl 'prj_dashboard_notify_delete_all'}}</a>
+        </div>
+          <div class="col-auto" id="btn_view_all">
+              <a href="#" class="small">{{transl 'prj_dashboard_notify_view_all'}}</a>
+          </div>
+      </div>
+ </div>
+ <div data-simplebar style="max-height: 80vh;">
+ 	{{#if this}}
+	{{#each this}}
+    <div class="media {{#equal stat '100'}}notify-noRead{{/equal}} div-notif-item">
+        <div class="avatar-xs mr-3 notification-item-1" data-prj="{{inf01.parID}}" data-id="{{id}}" data-tab="{{inf01.typTab}}">
+            <span class="avatar-title bg-primary rounded-circle font-size-16 span-read-notif"  data-id="{{id}}">
+                <i class="bx bx-show"></i>
+            </span>
+        </div>
+        <div class="media-body">
+        	<div>
+        		<h6 class="mt-0 mb-1 d-inline">{{reqCodePrjNotify inf01}}</h6>
+        		<span class="text-danger font-size-16 cursor-pointer span-delete-notif float-right" data-id="{{id}}" data-idSub="{{idSub}}"><i class="mdi mdi-trash-can-outline"></i></span>
+        	</div>
+            
+            <div class="font-size-12 text-muted notification-item" data-prj="{{inf01.parID}}" data-id="{{id}}" data-tab="{{inf01.typTab}}">
+                <p class="mb-1">{{{reqContentNotify inf01 history}}}</p>
+                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> {{reqFormatDate dt01}}</p>
+            </div>
+        </div>
+    </div>
+	{{/each}}
+	{{else}}
+	<a style="padding: 15px;">{{transl 'prj_dashboard_notify_no'}}</a>
+	{{/if}}
+ </div>
+ <div class="p-2 border-top text-center">
+ 	<a class="btn btn-sm btn-link font-size-20" href="javascript:void(0)" id="btn_view_prev">
+         <i class="mdi mdi-arrow-left-circle mr-1"></i>
+     </a>
+     <a class="btn btn-sm btn-link font-size-20" href="javascript:void(0)" id="btn_view_next">
+         <i class="mdi mdi-arrow-right-circle mr-1"></i>
+     </a>
+ </div>

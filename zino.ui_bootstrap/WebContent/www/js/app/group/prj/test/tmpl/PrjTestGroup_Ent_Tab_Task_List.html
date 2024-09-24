@@ -1,0 +1,41 @@
+        	{{#if this}}
+            <table class="table table-centered">
+<!--              table-nowrap -->
+			    <tbody id="tbody_task">
+			     {{#each this}}
+			        <tr data-id="{{id}}">
+			            <td class="td-task" data-id="{{id}}">
+							<div class="row">
+								<div class="col-md-1">
+									<p class="font-size-12 m-0">{{order}}</p>
+								</div>
+								<div class="col-md-5">
+									<p class="font-size-12 m-0">{{code}}</p>
+								</div>
+								<div class="col-md-6">
+									<p class="font-size-12 m-0">{{name}}</p>
+								</div>
+								
+							</div>
+							
+			            </td>
+			           
+			            <td class="d-flex justify-content-end">
+			            	<div class="dropdown float-right">
+			                   <a href="#" class="dropdown-toggle arrow-none" data-toggle="dropdown" aria-expanded="false">
+			                       <i class="mdi mdi-dots-vertical m-0 text-muted h5 task-option"></i>
+			                   </a>
+			                   <div class="dropdown-menu dropdown-menu-right" style="">
+									<a data-id="{{id}}" class="dropdown-item view-test" href="javascript:void(0)">{{transl 'prj_task_tab_view'}}</a>
+									<a data-right="view:40002004" data-id="{{id}}" class="dropdown-item remove-task_sprint" href="javascript:void(0)">{{transl 'prj_task_tab_remove'}}</a>
+			                   </div>
+			               </div>
+			            </td>
+			           
+			        </tr>
+			     {{/each}}
+			    </tbody>
+			</table>
+			{{else}}
+			<div class="mt-3">{{transl 'prj_project_task_no'}}</div>
+			{{/if}}

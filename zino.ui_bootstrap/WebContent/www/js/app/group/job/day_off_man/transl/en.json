@@ -1,0 +1,11 @@
+{
+    "job_report_msg_user_right_error":"You do not have permission to perform this movement.",
+    "job_report_list_user_title": "Employee list",
+    "job_report_label_user": "Employee name",
+    "job_report_label_login": "Username",
+    "job_report_stat_draft": "Save draft",
+    "job_report_stat_pending": "Waiting for confirmation",
+    "job_report_stat_validate": "Confirmed",
+    "job_report_stat_denied": "Deny",
+    "job_report_label_hldR": "Number of days off"
+}

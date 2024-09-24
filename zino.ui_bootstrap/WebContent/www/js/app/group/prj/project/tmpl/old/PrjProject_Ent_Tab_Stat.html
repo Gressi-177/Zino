@@ -1,0 +1,70 @@
+<div class="card">
+	<div class="card-body">
+		<div class="media">
+	        <div class="col-sm-9">
+				<h4 class="card-title mb-4 media-body d-inline-block">{{transl 'prj_project_stats'}}</h4>
+			</div>
+	   		<div class="col-sm-3 no-padding">
+            	<div class="dropdown float-right">
+					<a id="btn_add_stat_lst" class="isManager cursor-pointer"
+						title="{{transl 'prj_project_add_epic'}}"> <i
+						class="mdi mdi-plus font-size-18 text-success"></i>
+					</a> 
+					<a id="a_btn_save_stats" class="mr-2 text-primary hide action-item action-item-duplicate" data-toggle="tooltip" data-placement="top" title="" data-original-title="Save">
+	            		<i class="mdi mdi-content-save font-size-18 action-item"></i>
+	           		</a>
+		            <a id="a_btn_cancel_stats" class="mr-2 text-danger hide action-item-duplicate cursor-pointer" data-toggle="tooltip" data-placement="top" title="" data-original-title="Cancel">
+		            	<i class="mdi mdi-close font-size-18"></i>
+		            </a>
+		            
+		            <a href="javascript:void(0)"
+						class="dropdown-toggle card-drop" data-toggle="dropdown"
+						aria-expanded="false"> <i
+						class="mdi mdi-dots-vertical font-size-18"></i>
+					</a> 
+		            <a data-divtoogle="#div_stat_cont" class="btn-resize" data-toggle="tooltip" data-placement="top" title="" data-original-title="Resize">
+		            	 <i class="mdi mdi-window-minimize font-size-18"></i>
+		            </a>
+				</div>
+	    	</div>
+		</div>
+	    
+		<div id="div_stat_cont" class="col-xl-12 ml-2">
+		
+			{{#if lstStatsClone}}
+			{{#each lstStatsClone}}
+			<div class="custom-control custom-checkbox mb-2 row d-flex align-items-center">
+				<input type="checkbox" {{#equal show 1}}checked{{/equal}} class="custom-control-input item-stat-show" data-index="{{@index}}" id="customStatShow{{@index}}" {{#equal stat 2}}checked{{/equal}}>
+	          	<label class="custom-control-label {{#equal stat 2}}text-through{{/equal}}" for="customCheck{{@index}}">
+					{{#if trans}}
+						{{transl trans}}
+					{{else}}
+						{{lab}}
+					{{/if}}
+				</label>
+	       	   	<div class="dropdown isManager d-inline">
+	                <a href="javascript:void(0)" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
+	                    <i class="mdi mdi-dots-vertical font-size-18"></i>
+	                </a>
+	                <ul class="dropdown-menu dropdown-menu-left">
+						{{#notEqual def 1}}
+	                    <li class="isManager"><a href="javascript:void(0)" class="dropdown-item edit-item-stat" data-index="{{@index}}"><i class="mdi mdi-pencil font-size-16 text-success mr-1"></i> {{transl 'prj_project_descr02_edit'}}</a></li>
+						{{/notEqual}}
+						<li class="isManager"><a href="javascript:void(0)" class="dropdown-item up-item-stat" data-index="{{@index}}"><i class="mdi mdi-arrow-up font-size-16 text-info mr-1"></i> {{transl 'prj_project_stat_up'}}</a></li>
+						<li class="isManager"><a href="javascript:void(0)" class="dropdown-item down-item-stat" data-index="{{@index}}"><i class="mdi mdi-arrow-down font-size-16 text-info mr-1"></i> {{transl 'prj_project_stat_down'}}</a></li>
+						{{#notEqual def 1}}
+	                    <li class="isManager"><a href="javascript:void(0)" class="dropdown-item remove-item-stat" data-index="{{@index}}"><i class="mdi mdi-trash-can font-size-16 text-danger mr-1"></i> {{transl 'prj_project_descr02_delete'}}</a></li>
+						{{/notEqual}}
+					</ul>
+	            </div>
+		       </div>
+			{{/each}}
+			{{/if}}
+		
+		</div>
+	</div>
+</div>
+
+
+		
+	

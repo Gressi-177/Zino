@@ -1,0 +1,13 @@
+{{#* inline "getChild"}}
+	<li class="breadcrumb-item {{#if isShow}}active{{/if}}"><a data-route="VI_MAIN/prj_project_ent" data-url="view_prj_project_content.html?id={{id}}&code={{code01}}" class="hnv-route">{{cutStrNumber name 20}}</a></li>
+	{{#if child}}
+	{{> getChild child}}
+	{{/if}}
+{{/inline}}
+
+<ol class="breadcrumb m-0">
+     <li class="breadcrumb-item"><a data-route="VI_MAIN/prj_project_ent" data-url="view_prj_project_content.html?id={{id}}&code={{code01}}" class="hnv-route">{{cutStrNumber name 20}}</a></li>
+    {{#if child}}
+		{{> getChild child}}
+	{{/if}}	
+ </ol>

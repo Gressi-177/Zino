@@ -1,0 +1,163 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body" id="div_create_prj">
+                <form class="outer-repeater">
+                    <div data-repeater-list="outer-group" class="outer">
+                        <div data-repeater-item class="outer">
+                            <input data-name="id" value="{{id}}" type="text" class="objData hide">
+                            <!-- name -->
+                            <div class="form-group row mb-4">
+                                <div class="col-lg-12">
+                                    <label for="projectname" class="h5">{{transl
+                                        'prj_project_report_title'}} *</label>
+                                    <div class="media-body overflow-hidden">
+                                        <h5 class="text-truncate font-size-16 info-edit info-content">
+                                            {{inf01}}</h5>
+                                        <input id="projectname" data-name="inf01" value="{{inf01}}" type="text"
+                                            class="form-control objData hide content-edit isManager"
+                                            placeholder="{{transl 'prj_project_report_enter_title'}}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- descr01 -->
+                            <div class="row mb-4">
+                                <div class="col-lg-12">
+                                    <label for="projectdesc" class="h5">{{transl
+                                        'prj_project_report_des'}} *</label>
+                                    <div class="">
+                                        <div class="info-edit info-content info-content-description">
+                                            <p class="text-muted text-justify" data-name="inf02">{{{inf02}}}</p>
+                                        </div>
+                                        <div class="content-edit isManager hide">
+                                            <textarea class="form-control objData" data-name="inf02" id="projectdesc"
+                                                rows="5"
+                                                placeholder="{{transl 'prj_project_enter_project_des'}}">{{inf02}}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="inner-repeater row mb-4" data-external-mem="hide">
+                                <!-- date -->
+                                <div class="col-lg-6">
+                                    <label class="h5">{{transl 'prj_project_start_date'}}</label>
+                                    <div>
+                                        <p data-format="date" class="text-muted info-edit info-content"
+                                            data-name="dt01">{{reqFormatDate dt01}}</p>
+                                        <div class="input-daterange input-group hide content-edit isManager">
+                                            <input data-format="date" data-validation="date" type="text"
+                                                value="{{reqFormatShortDate dt01}}" data-group="dt01" data-name="date"
+                                                class="form-control objData" data-provide="datepicker"
+                                                data-date-format="dd/mm/yyyy">
+                                            <input type="text" class="form-control objData tmpicker"
+                                                value="{{reqFormatISOTime dt01}}" data-group="dt01" data-name="time"
+                                                data-provide="timepicker" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- member -->
+                                <div class="col-lg-6">
+                                    <label class="h5">{{transl 'prj_project_end_date'}}</label>
+                                    <div>
+                                        <p data-format="date" class="text-muted info-edit info-content"
+                                            data-name="dt02">{{reqFormatDate dt02}}</p>
+                                        <div class="input-daterange input-group hide content-edit isManager">
+                                            <input data-format="date" data-validation="date" type="text"
+                                                value="{{reqFormatShortDate dt02}}" data-group="dt02" data-name="date"
+                                                class="form-control objData" data-provide="datepicker"
+                                                data-date-format="dd/mm/yyyy">
+                                            <input type="text" class="form-control objData tmpicker"
+                                                value="{{reqFormatISOTime dt02}}" data-group="dt02" data-name="time"
+                                                data-provide="timepicker" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="row mb-4">
+                    <div class="col-lg-12">
+                        <!-- doc -->
+                        <div id="div_report_docs">
+                            <label class="col-form-label h5">{{transl 'prj_project_attached_files'}}</label>
+                            <button id="btn_edit_doc" type="button" class="btn btn-success btn-rounded waves-effect waves-light btn-sm isManager"><i class="mdi mdi-plus mr-1"></i> {{transl 'prj_project_add_member'}}</button>
+                            <div>
+                                <form id="div_report_ent_file_upload" action="/" method="post" class="dropzone hide inputfile">
+                                    <div class="fallback">
+                                        <input class="d-none" data-name="file" type="file" multiple />
+                                    </div>
+
+                                    <div class="dz-message needsclick">
+                                        <div class="mb-3">
+                                            <i class="display-4 text-muted bx bxs-cloud-upload"></i>
+                                        </div>
+                                        <h4>{{transl 'prj_project_drop_files'}}</h4>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive col-lg-12">
+                        <table class="table table-nowrap table-centered table-hover mb-0 objData" data-name="files"
+                            data-primary="id">
+                            <tbody>
+                                {{#each files}}
+                                {{#equal typ01 '2'}}
+                                <tr>
+                                    <td class="hide objData" data-name="id" data-group="files" data-gindex="{{@index}}">{{id}}</td>
+                                    <td class="hide objData" data-name="stat" data-group="files" data-gindex="{{@index}}">{{stat}}</td>
+                                    <td class="hide objData" data-name="code" data-group="files" data-gindex="{{@index}}">{{code}}</td>
+                                    <td class="hide objData" data-name="entType" data-group="files"
+                                        data-gindex="{{@index}}">{{entType}}</td>
+                                    <td class="hide objData" data-name="entId" data-group="files" data-gindex="{{@index}}">{{entId}}</td>
+                                    <td class="hide objData" data-name="url" data-group="files" data-gindex="{{@index}}">{{url}}</td>
+                                    <td class="hide objData" data-name="urlPrev" data-group="files"
+                                        data-gindex="{{@index}}">{{urlPrev}}</td>
+                                    <td class="hide objData" data-name="fSize" data-group="files" data-gindex="{{@index}}">{{size}}</td>
+    
+                                    <td class="hide objData" data-name="typ01" data-group="files" data-gindex="{{@index}}">{{typ01}}</td>
+                                    <td class="hide objData" data-name="typ02" data-group="files" data-gindex="{{@index}}">{{typ02}}</td>
+                                    <td class="hide objData" data-name="typ03" data-group="files" data-gindex="{{@index}}">{{typ03}}</td>
+                                    <td class="hide objData" data-name="name" data-group="files" data-gindex="{{@index}}">{{name}}</td>
+                                    <td class="hide objData" data-name="fname" data-group="files" data-gindex="{{@index}}">{{fname}}</td>
+                                    <td style="width: 45px;">
+                                        <div class="avatar-sm">
+                                            <span
+                                                class="avatar-title rounded-circle bg-soft-primary text-primary font-size-24">
+                                                <i class="bx bxs-file-{{getFileExtensionIcon fName}}"></i>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <h5 class="font-size-14 mb-1"><a href="javascript:void(0)"
+                                                data-path="{{reqPathDoc url}}"
+                                                class="text-dark item-file-download cursor-pointer"
+                                                title='{{reqNameStringFile fName}}'>{{reqNameFilePrj (reqNameStringFile
+                                                fName)}}</a></h5>
+                                        <small>{{reqSizeFile fSize}}</small>
+                                    </td>
+                                    <td>
+                                        <div class="text-center">
+                                            <a data-path="{{reqPathDoc url}}"
+                                                class="text-dark item-file-download cursor-pointer"><i
+                                                    class="bx bx-download h3 m-0"></i></a>
+                                            <a data-id="{{id}}"
+                                                class="text-dark item-file-delete hide isManager cursor-pointer"><i
+                                                    class="bx bx-minus-circle h3 m-0"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {{/equal}}
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

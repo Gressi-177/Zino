@@ -1,0 +1,69 @@
+<div class="card">
+	<div class="card-body">
+		<div class="media">
+			<div class="col-sm-5">
+	   			<h4 class="card-title">{{transl 'deal_ent_offer_comment_title'}}</h4>
+	   		</div>
+	   		<div class="col-sm-7 text-right">
+<!-- 		   		<a data-divtoogle=".comment-element, #div_comment_pagination" class="btn-resize" data-toggle="tooltip" data-placement="top" title="" data-original-title="Resize"> -->
+<!-- 		        	 <i class="mdi mdi-window-minimize font-size-18"></i> -->
+<!-- 		        </a> -->
+	   		</div>
+		</div>
+	</div>
+	{{#if islogin01}}
+	<div class="p-3 chat-input-section comment-element">
+         <div class="row">
+             <div class="col">
+                 <div class="position-relative">
+                 	 <input type="hidden" id="inp_parent_reply">
+                     <input id="inp_comment" type="text" class="form-control chat-input" placeholder="{{transl 'deal_ent_offer_comment_enter'}}">
+                 </div>
+             </div>
+             <div class="col-auto">
+                 <button id="btn_send_comment" type="button" class="btn btn-primary btn-rounded chat-send w-md waves-effect waves-light"><span class="d-none d-sm-inline-block mr-2">{{transl 'deal_ent_offer_comment_send'}}</span> <i class="mdi mdi-send"></i></button>
+             </div>
+         </div>
+     </div>
+     {{else}}
+     <div class="text-center">{{{transl 'deal_ent_offer_comment_no_login'}}}</div>
+     {{/if}}
+             
+    <div class="card-body comment-element">
+		{{#if data.lst}}
+			{{#each data.lst}}
+	        <div class="media mb-4">
+	            <div class="mr-3">
+	                <img class="media-object rounded-circle avatar-xs" alt="" src="{{reqSrcAvatarMember user}}">
+	            </div>
+	            <div class="media-body">
+	                <h5 class="font-size-13 mb-1">{{getNameLogin user}}</h5>
+	                <p class="text-muted mb-1">
+	                    <a href="" class="text-success"></a>
+	                    {{cont01}}
+	                </p>
+	                {{#each childs}}
+	                <div class="media mt-3">
+	                    <div class="avatar-xs mr-3">
+	                        <img class="media-object rounded-circle avatar-xs" alt="" src="{{reqSrcAvatarMember user}}">
+	                    </div>
+	                    <div class="media-body">
+	                        <h5 class="font-size-13 mb-1">{{getNameLogin user}}</h5>
+	                        <p class="text-muted mb-1">{{cont01}}</p>
+	                    </div>
+	                    <div class="ml-3">
+	                        <a href="javascript: void(0);" data-parent="{{../id}}" data-user="{{getNameLogin user}}" class="text-primary a-reply">{{transl 'deal_ent_offer_comment_reply'}}</a>
+	                    </div>
+	                </div>
+	                {{/each}}
+	            </div>
+	            <div class="ml-3">
+	                <a href="javascript: void(0);" data-parent="{{id}}" data-user="{{getNameLogin user}}" class="text-primary a-reply">{{transl 'deal_ent_offer_comment_reply'}}</a>
+	            </div>
+	        </div>
+	        {{/each}}
+	    {{else}}
+	    	<div><p>{{transl 'deal_ent_offer_comment_no_cmt'}}</p></div>
+	    {{/if}}
+    </div>
+</div>

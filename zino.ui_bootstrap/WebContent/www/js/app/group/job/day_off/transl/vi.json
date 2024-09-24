@@ -1,0 +1,9 @@
+{
+	"job_report_msg_user_right_error"		: "Bạn không có quyền thực hiện thao tác này.",
+	"prj_project_add_member"				: "Sửa",
+	"prj_project_attached_files"			: "Tập tin tham khảo",
+	"prj_project_drop_files"				: "Kéo thả hoặc nhấn để thêm tập tin.",
+	"job_rp_msgbox_confirm_submit_btn1"		: "Đồng ý và gửi",
+	"job_rp_msgbox_confirm_submit_btn2"		: "Quay lại",
+	"job_report_label_hldR"					: "Số ngày đã nghỉ"
+}
